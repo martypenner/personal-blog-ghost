@@ -1,0 +1,22 @@
+ghost:
+  build: .
+  ports:
+    - "8000:2368"
+  volumes:
+    - ./config.js:/var/lib/ghost/config.js
+    - ./themes/casper/post.hbs:/var/lib/ghost/themes/casper/post.hbs
+    - ./themes/casper/default.hbs:/var/lib/ghost/themes/casper/default.hbs
+    - ./themes/casper/partials/loop.hbs:/var/lib/ghost/themes/casper/partials/loop.hbs
+    - ./themes/casper/assets/css/prism.css:/var/lib/ghost/themes/casper/assets/css/prism.css
+    - ./themes/casper/assets/js/prism.js:/var/lib/ghost/themes/casper/assets/css/prism.js
+  volumes_from:
+    - ghostdata
+  environment:
+    NODE_ENV: production
+    VIRTUAL_HOST: penner.me,*.penner.me
+
+ghostdata:
+  image: busybox:ubuntu-14.04
+  command: "true"
+  volumes:
+    - /var/lib/ghost
