@@ -1,14 +1,14 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language+highlight-keywords */
+/* http://prismjs.com/download.html?themes=prism-dark&languages=markup+css+clike+javascript&plugins=line-highlight+line-numbers+autolinker+file-highlight+highlight-keywords */
 /**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: white;
+	text-shadow: 0 -.1em .2em black;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	direction: ltr;
 	text-align: left;
@@ -27,34 +27,45 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: .15em .2em .05em;
 	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: slategray;
+	color: hsl(30, 20%, 50%);
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+	opacity: .7;
 }
 
 .namespace {
@@ -63,15 +74,11 @@ pre[class*="language-"] {
 
 .token.property,
 .token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
 .token.boolean,
-.token.number {
-	color: #ae81ff;
+.token.number,
+.token.constant,
+.token.symbol {
+	color: hsl(350, 40%, 70%);
 }
 
 .token.selector,
@@ -80,7 +87,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+	color: hsl(75, 70%, 60%);
 }
 
 .token.operator,
@@ -89,22 +96,18 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+	color: hsl(40, 90%, 60%);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function {
-	color: #e6db74;
-}
-
 .token.keyword {
-	color: #66d9ef;
+	color: hsl(350, 40%, 70%);
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+	color: #e90;
 }
 
 .token.important,
@@ -117,6 +120,10 @@ pre[class*="language-"] {
 
 .token.entity {
 	cursor: help;
+}
+
+.token.deleted {
+	color: red;
 }
 
 pre[data-line] {
@@ -209,25 +216,3 @@ pre.line-numbers > code {
 .token a {
 	color: inherit;
 }
-pre[class*='language-'] {
-	position: relative;
-}
-pre[class*='language-'] > code[data-language] {
-	overflow: auto;
-	max-height: 28em;
-	display: block;
-}
-pre[class*='language-'] > code[data-language]::before {
-	content: attr(data-language);
-	color: black;
-	background-color: #CFCFCF;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 0.9em;
-	border-radius: 0 0 0 5px;
-	padding: 0 0.5em;
-	text-shadow: none;
-}
-
