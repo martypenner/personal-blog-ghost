@@ -10,7 +10,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://penner.me',
+        url: 'https://penner.me',
         mail: {
             transport: 'SMTP',
             host: 'smtp.mandrillapp.com',
@@ -18,7 +18,7 @@ config = {
                 service: 'Mandrill',
                 auth: {
                     user: 'penner.marty@gmail.com',
-                    pass: 'pbYPrO7FBFEpOOoPj2t98Q'
+                    pass: ''
                 },
             },
         },
