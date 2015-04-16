@@ -17,7 +17,7 @@ config = {
             options: {
                 service: 'Mandrill',
                 auth: {
-                    user: 'penner.marty@gmail.com',
+                    user: '',
                     pass: ''
                 },
             },
